@@ -1,5 +1,7 @@
 # Cynbit Lead Intelligence Copilot
 
+https://cynbit-lead-intelligence.streamlit.app
+
 A lightweight Streamlit proof of concept exploring lead triage as a potential AI opportunity aligned with Cynbit's public focus on AI automation and CRM workflows.
 
 ## What it does
