@@ -1,4 +1,3 @@
-
 import json
 import os
 import re
@@ -143,6 +142,11 @@ def score_lead(text: str) -> dict:
 def enhance_with_groq(inquiry: str, result: dict) -> dict:
     """Use Groq for interpretation and writing, never for changing the score."""
     api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        try:
+            api_key = st.secrets["GROQ_API_KEY"]
+        except (KeyError, FileNotFoundError):
+            api_key = None
 
     if not api_key:
         result["ai_status"] = "Fallback: GROQ_API_KEY not configured"
@@ -341,4 +345,3 @@ with st.expander("Technical notes & limitations"):
         and human overrides.
         """
     )
-
